@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #0A1D32;
+    color: white;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    padding: 1rem;
+    gap: 1rem;
+    h1{
+        font-weight: normal;
+        font-style: normal;
+
+    }
+    .current-horary{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+}
+
+#todo-form{
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    align-items: center;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 10rem);
+    grid-auto-rows: repeat(3, 1fr);
+    input{
+        border: none;
+        width:auto;
+        padding: .5rem;
+        &:focus{
+            border: none;
+            background-color: rgb(1, 54, 1);
+            color: white;
+        }
+    }
+    button{
+        grid-column: span 2;
+        border: none;
+        padding: .5rem;
+        color: black;
+        cursor: pointer;
+        &:hover{
+            background-color: green;
+            color: white;
+        }
+    }
+}
+
+.todo-list{
+    margin: 0 auto;
+    display: grid;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    h2{
+        letter-spacing: 1rem;
+        text-align: center;
+    }
+    .todo-item{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+        border-radius: .5rem;
+        &:hover{
+            box-shadow: 1px 1px 10px white;
+        }
+        .fa-circle{
+            cursor: pointer;
+        }
+        .fa-trash{
+            color: red;
+            cursor: pointer;
+            // &:hover{
+            //     transform: scale(105%);
+            // }
+        }
+        .fa-play{
+            cursor: pointer;
+            color: rgb(0, 255, 0);
+            // &:hover{
+            //     transition: .5s ease;
+            //     transform: scale(110%);
+            // }
+        }
+    }
+}
+
+.pomodoro-todo {
+    color: black;
+    padding: 1rem;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(233, 233, 233, 0.603);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    .pomodoro-time{
+        font-size: 3rem;
+    }
+    .pomodoro-quote, .pomodoro-title{
+        font-size: 1.5rem;
+    }
+}
